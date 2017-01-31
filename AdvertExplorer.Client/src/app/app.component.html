@@ -1,0 +1,11 @@
+<div>
+	<query [query]="currentQuery" (submit)="refreshResumes()"></query>
+	<div *ngIf="isLoading">
+		<div class="state-text">Поиск резюме...</div>
+		<img src="../assets/loader.gif" class="loader">
+	</div>
+	<div *ngIf="!isLoading">
+		<div class="state-text">Найдено {{currentResumes.length}} резюме</div>
+		<resume [resume]='resume' *ngFor="let resume of currentResumes"></resume>
+	</div>
+</div>

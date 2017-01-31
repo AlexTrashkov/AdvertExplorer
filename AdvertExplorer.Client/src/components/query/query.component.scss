@@ -1,0 +1,51 @@
+query {
+	margin: 4px;
+	padding: 4px;
+	border: medium solid lightgray;
+	border-radius: 4px;
+
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	align-content: space-around;
+	flex-wrap: wrap;
+
+	.dropdown-item {
+		cursor: pointer;
+	}
+
+	.ng-invalid {
+		background-color: #FF9494;
+	}
+
+	button.experience {
+		min-width: 95px;
+	}
+
+	div.form-inline {
+		padding: 4px;
+		max-width: 208px;
+
+		&.age {
+			width: 91px;
+		}
+
+		&.salary {
+			width: 130px;
+		}
+
+		input {
+			&.age {
+				width: 82px;
+			}
+
+			&.salary {
+				width: 121px;
+			}
+
+			&.search-string {
+				width: 199px;
+			}
+		}
+	}
+}

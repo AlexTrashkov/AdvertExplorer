@@ -1,0 +1,28 @@
+<div class="content row">
+	<img class="photo col-md-2" *ngIf="resume.photoUri" [src]="resume.photoUri">
+	<img class="photo col-md-2" *ngIf="!resume.photoUri" src="../../assets/default-avatar.jpg">
+
+	<div class="col-md-8">
+		<p><b>{{resume.jobTitle}}</b></p>
+		<p>
+			{{resume.name}}
+			<span *ngIf="resume.age">({{resume.age | ageFormatted}})</span>
+		</p>
+
+		<p *ngIf="resume.description" [innerHtml]="resume.description | lineBreakToBr"></p>
+	</div>
+
+	<div class="col-md-2">
+		<p>
+			<b>
+				{{resume.salary ? resume.salary + ' руб.': 'договорная'}}
+			</b>
+		</p>
+		<p>
+			{{experienceToString(resume.experience)}}
+		</p>
+		<p>
+			{{resume.educationType}}
+		</p>
+	</div>
+</div>

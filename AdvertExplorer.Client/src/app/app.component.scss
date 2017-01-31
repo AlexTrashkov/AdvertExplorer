@@ -1,0 +1,19 @@
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../components/resume/resume.component";
+@import "../components/query/query.component";
+
+app {
+	.loader {
+		display: block;
+		margin: 0 auto;
+	}
+
+	.text-left {
+		text-align: left;
+	}
+
+	.state-text {
+		padding: 4px;
+		font-size: 18px;
+	}
+}

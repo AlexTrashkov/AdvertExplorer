@@ -1,0 +1,78 @@
+<div class="form-inline">
+	<label for="regionDropdownMenuContainer">Регион</label>
+	<div ngbDropdown class="d-inline-block" id="regionDropdownMenuContainer">
+		<button type="button" class="btn btn-default" id="regionDropdownMenu" ngbDropdownToggle>
+			{{regionToString(query.region)}}
+		</button>
+		<div class="dropdown-menu" aria-labelledby="regionDropdownMenu">
+			<li *ngFor="let currentRegion of getAllRegions()" class="dropdown-item">
+				<a (click)="query.region = currentRegion">
+					{{regionToString(currentRegion)}} </a>
+			</li>
+		</div>
+	</div>
+</div>
+
+<div class="form-inline">
+	<label for="rubricDropdownMenuContainer">Рубрика</label>
+	<div ngbDropdown class="d-inline-block" id="rubricDropdownMenuContainer">
+		<button type="button" class="btn btn-default" id="rubricDropdownMenu" ngbDropdownToggle>
+			{{rubricToString(query.rubric)}}
+		</button>
+		<div class="dropdown-menu" aria-labelledby="rubricDropdownMenu">
+			<li class="dropdown-item">
+				<a (click)="query.rubric = undefined">Не указана</a>
+			</li>
+			<li *ngFor="let currentRubric of getAllRubrics()" class="dropdown-item">
+				<a (click)="query.rubric = currentRubric">
+					{{rubricToString(currentRubric)}} </a>
+			</li>
+		</div>
+	</div>
+</div>
+
+<div class="form-inline">
+	<label for="experienceDropdownMenuContainer">Опыт работы</label>
+	<div ngbDropdown class="d-inline-block" id="experienceDropdownMenuContainer">
+		<button type="button" class="btn btn-default text-left experience" id="experienceDropdownMenu" ngbDropdownToggle>
+			{{experienceToString(query.experience)}}
+		</button>
+		<div class="dropdown-menu" aria-labelledby="experienceDropdownMenu">
+			<li class="dropdown-item">
+				<a (click)="query.experience = undefined">Не указан</a>
+			</li>
+			<li *ngFor="let currentExperience of getAllExperiences()" class="dropdown-item">
+				<a (click)="query.experience = currentExperience">
+					{{experienceToString(currentExperience)}} </a>
+			</li>
+		</div>
+	</div>
+</div>
+
+<div class="form-inline age">
+	<label for="ageMinInput">Возраст, от</label>
+	<input id="ageMinInput" type="text" class="form-control age"
+				 [(ngModel)]="query.ageMin" pattern="^\d{1,2}$">
+</div>
+
+<div class="form-inline age">
+	<label for="ageMaxInput">Возраст, до</label>
+	<input id="ageMaxInput" type="text"class="form-control age"
+				 [(ngModel)]="query.ageMax" pattern="^\d{1,2}$">
+</div>
+
+<div class="form-inline salary">
+	<label for="salaryInput">Зарплата до, руб</label>
+	<input id="salaryInput" type="text" class="form-control salary"
+				 [(ngModel)]="query.salary" pattern="^[1-9][0-9]*$">
+</div>
+
+<div class="form-inline">
+	<label for="searchStringInput">Должность, ФИО, ID резюме</label>
+	<input id="searchStringInput" type="text" class="form-control search-string"
+				 [(ngModel)]="query.searchString">
+</div>
+
+<div class="form-inline">
+	<button class="btn btn-primary" (click)="submit.emit();">Найти</button>
+</div>
