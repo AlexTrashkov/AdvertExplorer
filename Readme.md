@@ -1,5 +1,3 @@
-**Live demo**: http://advertexplorer.alextrashkov.ru/ (use Debian 8 as web-server)
-
 **Backend**: 
 * ASP.NET Core
 * Entity Framework Core
